@@ -17,7 +17,7 @@ function App() {
     setemail(e.target.value)
     let isValidFormat=validator.isEmail(e.target.value)
 
-    const isValidDomain = isValidFormat && validator.isFQDN(newEmail.split('@')[1], { require_tld: true });
+    const isValidDomain = isValidFormat && validator.isFQDN(e.target.value.split('@')[1], { require_tld: true });
     setemailisValid(isValidFormat && isValidDomain);
   }
   const postDetailsHandler=async()=>{
