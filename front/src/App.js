@@ -15,7 +15,10 @@ function App() {
   }
   const emailChangeHandler=(e)=>{
     setemail(e.target.value)
-    setemailisValid(validator.isEmail(e.target.value));
+    let isValidFormat=validator.isEmail(e.target.value)
+
+    const isValidDomain = isValidFormat && validator.isFQDN(newEmail.split('@')[1], { require_tld: true });
+    setemailisValid(isValidFormat && isValidDomain);
   }
   const postDetailsHandler=async()=>{
     let response=await fetch('http://localhost:3005/signup',{

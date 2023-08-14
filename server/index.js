@@ -28,7 +28,7 @@ app.post('/signup',(req,res)=>{
     
     userEmails.push(userDetails)
     fs.writeFileSync('UserEmails.json', JSON.stringify(userEmails));
-    res.json({message:'User Signed Up',details:userDetails})
+    res.status(201).send("Email Sent!")
    }
 
 })
