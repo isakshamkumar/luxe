@@ -21,7 +21,7 @@ function App() {
     setemailisValid(isValidFormat && isValidDomain);
   }
   const postDetailsHandler=async()=>{
-    let response=await fetch('http://localhost:3005/signup',{
+    let response=await fetch('https://luxe-server.onrender.com',{
       method:'POST',
       headers:{
         "Content-Type":"application/json",
