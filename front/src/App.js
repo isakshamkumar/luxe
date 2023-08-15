@@ -28,6 +28,15 @@ function App() {
         },
         body :JSON.stringify({fullName,email})
     })
+    if(!response.ok){
+      toast.error('Email Already Exists!', {
+        position: 'top-center',
+        autoClose: 3000, // Toast will close after 3 seconds
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+    }
     let data=await response.json();
     console.log(data);
 
