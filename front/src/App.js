@@ -36,9 +36,11 @@ function App() {
         closeOnClick: true,
         pauseOnHover: true,
       });
+    }else{
+      setSubmitted(true);
+      let data=await response.json();
+      console.log(data);
     }
-    let data=await response.json();
-    console.log(data);
 
   }
 
@@ -47,7 +49,7 @@ function App() {
     if(emailisValid){
 
       postDetailsHandler()
-      setSubmitted(true); 
+       
 
     }else{
       toast.error('Invalid email address', {
